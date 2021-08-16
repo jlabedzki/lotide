@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   Array.isArray(actual) ? actual = actual.toString() : actual;
   Array.isArray(expected) ? expected = expected.toString() : expected;
 
@@ -13,7 +13,7 @@ tail(words);
 assertEqual(words.length, 3);
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
+assertEqual(result, ["Lighthouse", "Labs"]); // Will always fail without converting arrays into strings.
 assertEqual(result.length, 2); // ensure we get back two elements
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
