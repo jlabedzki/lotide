@@ -3,7 +3,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
 
-  let result = arr1.every(function(element, index) {
+  let result = arr1.every(function (element, index) {
     return element === arr2[index];
   });
 
@@ -11,14 +11,21 @@ const eqArrays = (arr1, arr2) => {
 };
 
 const assertArraysEqual = (actual, expected) => {
+
   if (!Array.isArray(actual) || !Array.isArray(expected)) {
     return console.log(`⛔️ Assertion Failed: One or more of the parameters is not an array.`);
   }
 
   let result = eqArrays(actual, expected);
 
-  result ? console.log(`✅ Assertion Passed: ${actual} === ${expected}`)
-    : console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
+  if (result) {
+    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
+    return;
+  } else {
+    console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
+    return;
+  }
+
 };
 
 assertArraysEqual([1, 2, 3], ['1', 2, 3]);
