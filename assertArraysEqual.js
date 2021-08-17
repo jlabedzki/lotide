@@ -3,7 +3,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
 
-  let result = arr1.every(function (element, index) {
+  let result = arr1.every(function(element, index) {
     return element === arr2[index];
   });
 
