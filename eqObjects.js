@@ -3,18 +3,6 @@ const assertEqual = function(actual, expected) {
     : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
 
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  let result = arr1.every(function(element, index) {
-    return element === arr2[index];
-  });
-
-  return result;
-};
-
 const eqObjects = function(object1, object2) {
 
   if (typeof object1 !== 'object' || typeof object2 !== 'object') {
