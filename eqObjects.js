@@ -17,6 +17,10 @@ const eqArrays = (arr1, arr2) => {
 
 const eqObjects = function(object1, object2) {
 
+  if (typeof object1 !== 'object' || typeof object2 !== 'object') {
+    return 'One or more parameters is not an object.';
+  }
+
   const key1 = Object.keys(object1);
   const key2 = Object.keys(object2);
 
