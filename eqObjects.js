@@ -12,10 +12,7 @@ const eqObjects = function(object1, object2) {
   const keyValue1 = Object.entries(object1).sort().flat(Infinity);
   const keyValue2 = Object.entries(object2).sort().flat(Infinity);
 
-  const length1 = keyValue1.length;
-  const length2 = keyValue2.length;
-
-  if (length1 !== length2) {
+  if (keyValue1.length !== keyValue2.length) {
     return false;
   }
 
