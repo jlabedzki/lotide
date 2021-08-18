@@ -1,9 +1,9 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   return actual === expected ? `✅ Assertion Passed: ${actual} === ${expected}`
     : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
 
-const findKeyByValue = function(object, value) {
+const findKeyByValue = function (object, value) {
 
   // Converts an object to a nested array, where each array is a key-value pair.
   const objToArray = Object.entries(object);
@@ -28,4 +28,4 @@ const bestTVShowsByGenre = {
 
 console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"));
 console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined));
-console.log(findKeyByValue(bestTVShowsByGenre, "The wire"));
+console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
