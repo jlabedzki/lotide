@@ -3,7 +3,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
 
-  let result = arr1.every(function (element, index) {
+  let result = arr1.every(function(element, index) {
     return element === arr2[index];
   });
 
@@ -29,26 +29,22 @@ const assertArraysEqual = (actual, expected) => {
 };
 
 const middle = (array) => {
-  let numOfElements = 0;
+  let midIndex = array.length / 2;
 
-  for (let num of array) {
-    numOfElements += 1;
+  if (array.length < 3) {
+    return [];
   }
-
-
-
-  let midIndex = numOfElements / 2;
 
   if (!Number.isInteger(midIndex)) {
     midIndex = Math.floor(midIndex);
     return [array[midIndex]];
   }
 
-  return numOfElements > 2 ? [array[midIndex - 1], array[midIndex]] : [];
+  return [array[midIndex - 1], array[midIndex]];
 };
 
 console.log(middle([1, 2, 3, 4, 5,]));
 console.log(middle([1, 2, 3, 4, 5, 6]));
+console.log(middle([1]));
 console.log(middle([1, 2]));
-
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
