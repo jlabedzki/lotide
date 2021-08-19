@@ -4,7 +4,7 @@ const assertEqual = function (actual, expected) {
 };
 
 const eqArrays = (arr1, arr2) => {
-  const result = arr1.every((element, index) => element === arr2[index]);
+  const result = arr1.every((el, ind) => el === arr2[ind]);
 
   return arr1.length !== arr2.length ? false : result;
 };
