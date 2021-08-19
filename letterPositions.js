@@ -1,34 +1,16 @@
 const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+  const result = arr1.every((element, index) => element === arr2[index]);
 
-  let result = arr1.every(function(element, index) {
-    return element === arr2[index];
-  });
-
-  return result;
+  return arr1.length !== arr2.length ? false : result;
 };
 
 const assertArraysEqual = (actual, expected) => {
-
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    return console.log(`⛔️ Assertion Failed: One or more of the parameters is not an array.`);
-  }
-
-  let result = eqArrays(actual, expected);
-
-  if (result) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-    return;
-  } else {
-    console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
-    return;
-  }
-
+  return eqArrays(actual, expected) ?
+    `✅ Assertion Passed: ${actual} === ${expected}`
+    : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
 
-const letterPositions = (sentence) => {
+const letterPositions = sentence => {
   const results = {};
 
   for (let i = 0; i < sentence.length; i++) {
@@ -44,7 +26,8 @@ const letterPositions = (sentence) => {
 
   return results;
 };
+console.log(eqArrays([1, 2, 3], [1, 2]));
 
-assertArraysEqual(letterPositions("hello").e, [1]);
+console.log(assertArraysEqual(letterPositions("hello").e, [1]));
 console.log(letterPositions("lighthouse in the house"));
 assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);

@@ -1,5 +1,6 @@
-const assertEqual = function (actual, expected) {
-  return actual === expected ? `✅ Assertion Passed: ${actual} === ${expected}`
+const assertEqual = (actual, expected) => {
+  return actual === expected ?
+    `✅ Assertion Passed: ${actual} === ${expected}`
     : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
 
