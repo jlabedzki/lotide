@@ -1,5 +1,3 @@
-const words = ["ground", "control", "to", "major", "tom"];
-
 const map = (arr, cb) => {
   const output = [];
 
@@ -13,40 +11,42 @@ const map = (arr, cb) => {
 module.exports = map;
 
 // Functions below are used to test map function.
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
 
-  let result = arr1.every(function (element, index) {
-    return element === arr2[index];
-  });
+// const eqArrays = (arr1, arr2) => {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
 
-  return result;
-};
+//   let result = arr1.every(function (element, index) {
+//     return element === arr2[index];
+//   });
 
-const assertArraysEqual = (actual, expected) => {
+//   return result;
+// };
 
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    return console.log(`⛔️ Assertion Failed: One or more of the parameters is not an array.`);
-  }
+// const assertArraysEqual = (actual, expected) => {
 
-  let result = eqArrays(actual, expected);
+//   if (!Array.isArray(actual) || !Array.isArray(expected)) {
+//     return console.log(`⛔️ Assertion Failed: One or more of the parameters is not an array.`);
+//   }
 
-  if (result) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-    return;
-  } else {
-    console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
-    return;
-  }
+//   let result = eqArrays(actual, expected);
 
-};
+//   if (result) {
+//     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
+//     return;
+//   } else {
+//     console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
+//     return;
+//   }
 
-const firstLetter = map(words, word => word[0]);
-const lastLetter = map(words, word => word[word.length - 1]);
-assertArraysEqual(firstLetter, ['g', 'c', 't', 'm', 't']); // ==> true
-assertArraysEqual(lastLetter, ['d', 'l', 'o', 'r', 'm']); // ==> true
-assertArraysEqual(firstLetter, lastLetter); // ==> false
+// };
+
+// const words = ["ground", "control", "to", "major", "tom"];
+// const firstLetter = map(words, word => word[0]);
+// const lastLetter = map(words, word => word[word.length - 1]);
+// assertArraysEqual(firstLetter, ['g', 'c', 't', 'm', 't']); // ==> true
+// assertArraysEqual(lastLetter, ['d', 'l', 'o', 'r', 'm']); // ==> true
+// assertArraysEqual(firstLetter, lastLetter); // ==> false
 
 
