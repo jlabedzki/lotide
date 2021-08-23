@@ -10,6 +10,8 @@ const map = (arr, cb) => {
   return output;
 };
 
+module.exports = map;
+
 // Functions below are used to test map function.
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {

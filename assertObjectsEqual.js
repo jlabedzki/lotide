@@ -1,4 +1,4 @@
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
 
   if (typeof object1 !== 'object' || typeof object2 !== 'object') {
     return 'One or more parameters is not an object.';
@@ -25,9 +25,11 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const assertObjectsEqual = function(actual, expected) {
+const assertObjectsEqual = function (actual, expected) {
   return eqObjects(actual, expected) ? `✅ Assertion Passed: ${actual} === ${expected}` : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
+
+module.exports = assertObjectsEqual;
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };

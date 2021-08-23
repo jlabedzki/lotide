@@ -1,9 +1,9 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   return actual === expected ? `✅ Assertion Passed: ${actual} === ${expected}`
     : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
 
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   const sortedObject1 = Object.keys(object1).sort().reduce(
     (obj, key) => {
       obj[key] = object1[key];
@@ -48,3 +48,6 @@ console.log(eqObjects(cd, cd2)); // => false
 console.log(eqObjects({ a: { z: { f: 1, z: 10, k: { wow: 'alot', of: 'nested objects' } } }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
 
 console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
+
+
+module.exports = eqObjects;

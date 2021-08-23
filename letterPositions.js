@@ -26,6 +26,10 @@ const letterPositions = sentence => {
 
   return results;
 };
+
+module.exports = letterPositions;
+
+
 console.log(eqArrays([1, 2, 3], [1, 2]));
 
 console.log(assertArraysEqual(letterPositions("hello").e, [1]));

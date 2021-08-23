@@ -3,7 +3,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
 
-  let result = arr1.every(function(element, index) {
+  let result = arr1.every(function (element, index) {
     return element === arr2[index];
   });
 
@@ -28,10 +28,10 @@ const assertArraysEqual = (actual, expected) => {
 
 };
 
-const without = function(source, itemsToRemove) {
+const without = function (source, itemsToRemove) {
 
   if (!Array.isArray(source) || !Array.isArray(itemsToRemove)) {
-    return 'Please make sure both parameters are arrays.';
+    return undefined;
   }
 
   let arr = [];
@@ -44,3 +44,5 @@ const without = function(source, itemsToRemove) {
 
   return arr;
 };
+
+module.exports = without;

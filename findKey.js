@@ -11,6 +11,8 @@ const findKey = (obj, cb) => {
   return keys.find(e => cb(obj[e]));
 };
 
+module.exports = findKey;
+
 // Assertion should pass
 console.log(assertEqual((findKey({
   "Blue Hill": { stars: 1 },

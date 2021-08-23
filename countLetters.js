@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   return actual === expected ? `✅ Assertion Passed: ${actual} === ${expected}`
     : `⛔️ Assertion Failed: ${actual} !== ${expected}`;
 };
@@ -25,3 +25,6 @@ console.log(countLetters('Johnny is my name'));
 const one = countLetters('My name is Johnny');
 const two = countLetters('Johnny is my name');
 console.log(assertEqual(one.n, two.n));
+
+
+module.exports = countLetters;

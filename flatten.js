@@ -3,7 +3,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
 
-  let result = arr1.every(function(element, index) {
+  let result = arr1.every(function (element, index) {
     return element === arr2[index];
   });
 
@@ -42,5 +42,7 @@ const flatten = (nestedArray) => {
 
   return output;
 };
+
+module.exports = flatten;
 
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
